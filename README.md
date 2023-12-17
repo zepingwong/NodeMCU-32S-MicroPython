@@ -4,7 +4,7 @@
 
 - 硬件资料: [安可信 NodeMCU-32S 核心开发板](https://docs.ai-thinker.com/esp32/boards/nodemcu_32s)
 - Python环境: 推荐使用虚拟环境
-- 驱动安装: [芯片制造商网站](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=overview) ； 或者使用此项目 development/driver 下的Windows或Mac的驱动程序
+- 驱动安装: 芯片制造商网站 [英文](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=overview) [中文](https://cn.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) ； 或者使用此项目 development/driver 下的Windows或Mac的驱动程序
 - 固件: [MicroPython官网](https://micropython.org/download/ESP32_GENERIC/) ；或者使用此项目 develop/firmware 目录下的固件
 
 ## 工具
