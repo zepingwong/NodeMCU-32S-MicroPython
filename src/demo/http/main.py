@@ -1,7 +1,7 @@
 # 导入Microdot
-from src.lib.microdot import Microdot
+from lib.microdot import Microdot, send_file
 # 连接wifi
-from src.common.connect_wifi import do_connect
+from common.connect_wifi import do_connect
 # 导入引脚
 from machine import Pin
 # esp32 引脚2是一颗自带的 led的灯
@@ -10,6 +10,11 @@ light = Pin(2,Pin.OUT)
 do_connect()
 # 实例化这个类
 app = Microdot()
+
+# 返回一个网页
+@app.route('/')
+def index(request):
+    return send_file('public/index.html')
 
 # 设置一个get请求 如果
 @app.get('/on')
