@@ -14,7 +14,7 @@ app = Microdot()
 # 返回一个网页
 @app.route('/')
 def index(request):
-    return send_file('public/index.html')
+    return send_file('public/http.html')
 
 # 设置一个get请求 如果
 @app.get('/on')

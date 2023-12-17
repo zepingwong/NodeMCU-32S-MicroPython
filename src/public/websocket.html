@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>esp32服务器网页</title>
+</head>
+<body>
+    <h1>websocket</h1>
+    <input type="text" name="" id="" />
+    <button>提交</button>
+    <div class="content">
+    </div>
+    <script>
+        let ipt = document.querySelector("input")
+        let btn = document.querySelector("button")
+        let content = document.querySelector(".content")
+        // websocket连接
+        const socket = new WebSocket('ws://' + location.host + '/ws');
+        // 防抖函数 防止服务器接受大量请求
+        const throttle = (func,interval)=>{
+            let last = 0;
+            return function(){
+                let args = arguments
+                let now = Date.now();
+                if(now - last > interval){
+                    func.apply(this,args)
+                    last = now
+                }
+            }
+        }
+        btn.addEventListener("click",throttle((e)=>{
+            // 拿输入数据
+            let value = ipt.value
+            // 给服务器发送数据
+            socket.send(value)
+        },800))
+        const setContent = (text,color)=>{
+            content.innerHTML = `<span style="color: ${color}">${text}</span><br>`
+        }
+        socket.addEventListener('message', ev => {
+            setContent('收到消息' + ev.data, 'blue');
+        });
+        socket.addEventListener('close', ev => {
+            setContent('连接关闭' + ev.data, 'blue');
+        });
+    </script>
+</body>
+</html>
