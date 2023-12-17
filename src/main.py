@@ -1,7 +1,7 @@
 # 导入Microdot
-from lib.microdot import Microdot
+from src.lib.microdot import Microdot
 # 连接wifi
-from common.connect_wifi import do_connect
+from src.common.connect_wifi import do_connect
 # 导入引脚
 from machine import Pin
 # esp32 引脚2是一颗自带的 led的灯

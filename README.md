@@ -40,3 +40,4 @@ esptool --chip esp32 --port COM3 --baud 115200 write_flash -z 0x1000 ./firmware/
 - [太极创客](http://www.taichi-maker.com/homepage/download/)
 - [MicroPython ESP32/WROOM](https://micropython.org/download/ESP32_GENERIC/)
 - [nodemcu-pyflasher](https://gitcode.com/mirrors/marcelstoer/nodemcu-pyflasher/tree/master?init=initRepo)
+- [Microdot一个可以在MicroPython中搭建物联网web服务器的框架](https://microdot.readthedocs.io/en/latest/index.html)
